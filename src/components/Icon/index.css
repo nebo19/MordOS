@@ -1,0 +1,21 @@
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  padding-left: 13px;
+  padding-right: 13px;
+  border-radius: 3em;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-wrapper img {
+  width: 80%;
+  height: 80%;
+}
+
+.icon-wrapper:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+}

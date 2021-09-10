@@ -1,0 +1,57 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.wrapper input {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.5em;
+}
+
+.wrapper input:focus {
+  outline: none;
+}
+
+.wrapper h1 {
+  color: #fff;
+  font-size: 4.5em;
+}
+
+.wrapper button {
+  background-color: #fff; /* Green */
+  border: none;
+  padding: 13px 28px;
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 0.5em;
+  color: #0b152f;
+  width: 50%;
+  transition: all ease-in-out 0.3s;
+}
+
+.wrapper button:hover {
+  background-color: #df513d;
+  color: #fff;
+}
+
+.osColor {
+  color: #df513d;
+}

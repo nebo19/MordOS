@@ -1,0 +1,39 @@
+.window-wrapper {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  min-width: 400px;
+  min-height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  resize: both;
+  overflow: auto;
+}
+
+.window-navbar {
+  width: 100%;
+  background-color: #df513d;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.window-component-wrapper {
+  width: 100%;
+  min-height: inherit;
+}
+
+.window-exit-icon {
+  margin-top: 3px;
+}
+
+.window-exit-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+.window-exit-icon img:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,8 @@
+.desktop-wrapper {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
