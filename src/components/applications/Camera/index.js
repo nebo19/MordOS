@@ -13,9 +13,8 @@ const Camera = () => {
       const stream = await navigator.mediaDevices.getUserMedia({
         video: {},
       });
-      let video = videoRef.current;
-      video.srcObject = stream;
-      video.play();
+      videoRef.current.srcObject = stream;
+      videoRef.current.play();
     } catch (err) {
       alert(err);
     }

@@ -2,8 +2,8 @@
   position: absolute;
   top: 10%;
   left: 10%;
-  width: 700px;
-  height: 700px;
+  width: 500px;
+  height: 500px;
   min-width: 400px;
   min-height: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -11,6 +11,7 @@
   border-radius: 0.4em;
   resize: both;
   overflow: auto;
+  animation: fadein 0.1s ease-in-out alternate;
 }
 
 .window-navbar {
@@ -59,5 +60,14 @@
 }
 
 .window-component-wrapper::-webkit-scrollbar-thumb {
-  background-color: #d1422f;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -8,9 +8,9 @@ import newsFeedIcon from '../../assets/icons/newsFeed.png';
 import galleryIcon from '../../assets/icons/gallery.png';
 import browserIcon from '../../assets/icons/browser.png';
 import Icon from '../Icon';
-import { WindowContext } from '../../context/WindowProvider';
-import { AuthContext } from '../../context/AuthProvider';
-// import { AuthContext } from '../../context/AuthProvider';
+import { WindowContext } from '../../context/WindowContext';
+import { AuthContext } from '../../context/AuthContext';
+// import { AuthContext } from '../../context/AuthContext';
 
 const icons = [
   {

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './index.css';
 import Flame from '../../assets/animations/Flame';
 import { credentials } from '../../credentials';
-import { AuthContext } from '../../context/AuthProvider';
+import { AuthContext } from '../../context/AuthContext';
 
 const Auth = () => {
   const { setAuth, formValues, handleChange } = useContext(AuthContext);

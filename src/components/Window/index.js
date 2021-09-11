@@ -8,21 +8,26 @@ import FileExplorer from '../../components/applications/FileExplorer';
 import windowExitIcon from '../../assets/icons/exit.png';
 import maximizeIcon from '../../assets/icons/maximize.png';
 import restoreDownIcon from '../../assets/icons/restoreDown.png';
-import { WindowContext } from '../../context/WindowProvider';
-import { ZIndexContext } from '../../context/ZIndexProvider';
-import './index.css';
+import { WindowContext } from '../../context/WindowContext';
+import { ZIndexContext } from '../../context/ZIndexContext';
+import { PositionContext } from '../../context/PositionContext';
 import { dragElement } from './draggable';
+
+import './index.css';
 
 const Window = ({ appName }) => {
   const [maximize, setMaximize] = useState(false);
   const { closeWindow } = useContext(WindowContext);
   const { zIndex, changeZIndex } = useContext(ZIndexContext);
+  const { position, changePosition, resetPosition } =
+    useContext(PositionContext);
   const elemRef = useRef([]);
 
   useEffect(() => {
     // Calling changeZIndex only once on render to set ZIndex higher than the previous Window
     // So it shows on top of previous component
     changeZIndex(appName);
+    changePosition(appName);
     //eslint-disable-next-line
   }, []);
 
@@ -30,6 +35,18 @@ const Window = ({ appName }) => {
     dragElement(elemRef.current['wrapper'], elemRef.current['navbar']);
     elemRef.current['wrapper'].style.zIndex = zIndex[appName];
   }, [zIndex, appName]);
+
+  useEffect(() => {
+    elemRef.current['wrapper'].style.top = `${position[appName].top}%`;
+    elemRef.current['wrapper'].style.left = `${position[appName].left}%`;
+  }, [position, appName]);
+
+  useEffect(() => {
+    return () => {
+      resetPosition();
+    };
+    //eslint-disable-next-line
+  }, []);
 
   const renderApp = () => {
     switch (appName) {
@@ -69,7 +86,10 @@ const Window = ({ appName }) => {
         ref={(el) => (elemRef.current['navbar'] = el)}
       >
         <div className="window-name">{upperAppName}</div>
-        <div className="window-exit-icon">
+        <div
+          className="window-exit-icon"
+          onMouseDown={(e) => e.stopPropagation()}
+        >
           <img
             src={maximize ? restoreDownIcon : maximizeIcon}
             alt="maximize"

@@ -5,8 +5,10 @@ import NavBar from '../NavBar';
 import Window from '../Window';
 
 import './index.css';
-import { WindowContext } from '../../context/WindowProvider';
-import { ZIndexProvider } from '../../context/ZIndexProvider';
+import { WindowContext } from '../../context/WindowContext';
+import { ZIndexProvider } from '../../context/ZIndexContext';
+import { FileExplorerProvider } from '../../context/FileExplorerContext';
+import { PositionProvider } from '../../context/PositionContext';
 
 const Desktop = () => {
   const { open } = useContext(WindowContext);
@@ -21,7 +23,11 @@ const Desktop = () => {
   return (
     <div className="desktop-wrapper">
       <NavBar />
-      <ZIndexProvider>{renderApps()}</ZIndexProvider>
+      <FileExplorerProvider>
+        <PositionProvider>
+          <ZIndexProvider>{renderApps()}</ZIndexProvider>
+        </PositionProvider>
+      </FileExplorerProvider>
       <img src={sauronImage} alt="sauron" />
       <Taskbar />
     </div>

@@ -14,7 +14,11 @@ const useDate = () => {
   }, []);
 
   const day = today.toLocaleDateString(locale, { weekday: 'long' });
+  const secondsNumber = today.getSeconds();
+
   const dayNumber = today.getDate();
+  const monthNumber = today.getMonth() + 1;
+  const yearNumber = today.getFullYear();
 
   const parseDayNumber = () => {
     switch (dayNumber) {
@@ -49,10 +53,15 @@ const useDate = () => {
 
   const time = `${timeFormat}`;
 
+  const dateAndTime = `${dayNumber}/${monthNumber}/${yearNumber} ${time}:${
+    secondsNumber < 10 ? '0' + secondsNumber : secondsNumber
+  }`;
+
   return {
     date,
     time,
     wish,
+    dateAndTime,
   };
 };
 
