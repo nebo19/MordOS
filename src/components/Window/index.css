@@ -1,18 +1,21 @@
 .window-wrapper {
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 10%;
+  left: 10%;
+  width: 700px;
+  height: 700px;
   min-width: 400px;
   min-height: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-color: #fff;
+  background-color: #eaeeff;
+  border-radius: 0.4em;
   resize: both;
   overflow: auto;
 }
 
 .window-navbar {
   width: 100%;
-  background-color: #df513d;
+  background-color: #d1422f;
   height: 28px;
   display: flex;
   flex-direction: row;
@@ -22,7 +25,13 @@
 
 .window-component-wrapper {
   width: 100%;
-  min-height: inherit;
+  height: calc(100% - 28px);
+  overflow: auto;
+}
+
+.window-name {
+  color: #fff;
+  margin-left: 5px;
 }
 
 .window-exit-icon {
@@ -36,4 +45,19 @@
 
 .window-exit-icon img:hover {
   cursor: pointer;
+}
+
+.window-component-wrapper::-webkit-scrollbar-track {
+  background-color: #eaeeff;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.window-component-wrapper::-webkit-scrollbar {
+  width: 12px;
+  background-color: #eaeeff;
+}
+
+.window-component-wrapper::-webkit-scrollbar-thumb {
+  background-color: #d1422f;
 }

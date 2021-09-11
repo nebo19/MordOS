@@ -10,7 +10,7 @@ const NavBar = () => {
     <div className="navbar-wrapper">
       <h1>
         {wish}
-        <span>Mr. Borgoth</span>
+        <span>Borgoth</span>
       </h1>
       <h2>{date}</h2>
       <h2>{time}</h2>

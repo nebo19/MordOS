@@ -1,0 +1,14 @@
+.news-card-wrapper {
+  width: 70%;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 15px 5px;
+  padding: 10px;
+  border-radius: 0.5em;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.news-card-wrapper:hover {
+  transform: scale(1.05);
+}

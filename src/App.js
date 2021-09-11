@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Auth from './components/Auth';
 import Desktop from './components/Desktop';
-import { WindowProvider } from './context/WindowContext';
+import { WindowProvider } from './context/WindowProvider';
 import { AuthContext } from './context/AuthProvider';
 
 const App = () => {

@@ -1,23 +1,21 @@
 import React, { useContext } from 'react';
 import './index.css';
-import logoutIcon from '../../assets/icons/logoutWhite.png';
-import fileExplorerIcon from '../../assets/icons/fileExplorerWhite.png';
-import textEditorIcon from '../../assets/icons/textEditorWhite.png';
-import cameraIcon from '../../assets/icons/cameraWhite.png';
-import newsFeedIcon from '../../assets/icons/newsFeedWhite.png';
-import galleryIcon from '../../assets/icons/galleryWhite.png';
-import browserIcon from '../../assets/icons/browserWhite.png';
+import logoutIcon from '../../assets/icons/logout.png';
+import fileExplorerIcon from '../../assets/icons/fileExplorer.png';
+import textEditorIcon from '../../assets/icons/textEditor.png';
+import cameraIcon from '../../assets/icons/camera.png';
+import newsFeedIcon from '../../assets/icons/newsFeed.png';
+import galleryIcon from '../../assets/icons/gallery.png';
+import browserIcon from '../../assets/icons/browser.png';
 import Icon from '../Icon';
-import { WindowContext } from '../../context/WindowContext';
+import { WindowContext } from '../../context/WindowProvider';
+import { AuthContext } from '../../context/AuthProvider';
+// import { AuthContext } from '../../context/AuthProvider';
 
 const icons = [
   {
     appName: 'logout',
     image: logoutIcon,
-    onClick: () => {
-      localStorage.removeItem('user');
-      window.location.reload();
-    },
   },
   { appName: 'fileExplorer', image: fileExplorerIcon },
   { appName: 'textEditor', image: textEditorIcon },
@@ -28,17 +26,25 @@ const icons = [
 ];
 
 const Taskbar = () => {
-  const { openWindow } = useContext(WindowContext);
+  const { open, openWindow } = useContext(WindowContext);
+  const { setAuth } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setAuth(false);
+  };
 
   return (
     <div className="taskbar-wrapper">
       {icons.map((icon, index) => (
         <Icon
+          open={open[icon.appName]}
+          appName={icon.appName}
           image={icon.image}
           key={index}
           onClick={() =>
             icon.appName === 'logout'
-              ? icon.onClick()
+              ? handleLogout()
               : openWindow(icon.appName)
           }
         />

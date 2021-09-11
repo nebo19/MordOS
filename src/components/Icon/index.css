@@ -1,21 +1,39 @@
 .icon-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 60px;
   width: 60px;
-  padding-left: 13px;
-  padding-right: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
   border-radius: 3em;
-  transition: all 0.2s ease-in-out;
 }
 
 .icon-wrapper img {
   width: 80%;
   height: 80%;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-wrapper img:hover {
+  transform: scale(1.25);
 }
 
 .icon-wrapper:hover {
-  transform: scale(1.4);
   cursor: pointer;
+}
+
+.icon-wrapper:hover .tooltip {
+  display: block;
+}
+
+.tooltip {
+  display: none;
+  color: #fff;
+  margin-bottom: 100px;
+  position: absolute;
+  z-index: 1000;
 }

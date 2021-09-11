@@ -5,7 +5,7 @@ import { credentials } from '../../credentials';
 import { AuthContext } from '../../context/AuthProvider';
 
 const Auth = () => {
-  const { setAuth, auth, formValues, handleChange } = useContext(AuthContext);
+  const { setAuth, formValues, handleChange } = useContext(AuthContext);
   const { email, password } = formValues;
 
   const handleClick = () => {
@@ -14,8 +14,8 @@ const Auth = () => {
       localStorage.setItem(
         'user',
         JSON.stringify({
-          formValues,
-          auth,
+          email,
+          password,
         })
       );
     } else {

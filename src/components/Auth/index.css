@@ -5,6 +5,7 @@
   align-items: center;
   width: 100%;
   margin-top: 20vh;
+  animation: fadeInFromNone 0.5s ease-out;
 }
 
 .wrapper {
@@ -35,7 +36,7 @@
 }
 
 .wrapper button {
-  background-color: #fff; /* Green */
+  background-color: #fff;
   border: none;
   padding: 13px 28px;
   margin-top: 20px;
@@ -54,4 +55,21 @@
 
 .osColor {
   color: #df513d;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }

@@ -7,7 +7,7 @@ const useDate = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setDate(new Date());
-    }, 15 * 1000);
+    }, 1000);
     return () => {
       clearInterval(timer);
     };
@@ -29,7 +29,7 @@ const useDate = () => {
     }
   };
 
-  const date = `It is ${day}, ${dayNumber}${parseDayNumber()} of ${today.toLocaleDateString(
+  const date = `${day}, ${dayNumber}${parseDayNumber()} ${today.toLocaleDateString(
     locale,
     {
       month: 'long',
@@ -47,7 +47,7 @@ const useDate = () => {
     minute: 'numeric',
   });
 
-  const time = `At ${timeFormat}`;
+  const time = `${timeFormat}`;
 
   return {
     date,

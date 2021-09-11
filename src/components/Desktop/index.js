@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import Taskbar from '../Taskbar';
-import sauronImage from '../../assets/sauronWhite.png';
+import sauronImage from '../../assets/sauron.png';
 import NavBar from '../NavBar';
 import Window from '../Window';
 
 import './index.css';
-import { WindowContext } from '../../context/WindowContext';
+import { WindowContext } from '../../context/WindowProvider';
+import { ZIndexProvider } from '../../context/ZIndexProvider';
 
 const Desktop = () => {
   const { open } = useContext(WindowContext);
@@ -20,7 +21,7 @@ const Desktop = () => {
   return (
     <div className="desktop-wrapper">
       <NavBar />
-      {renderApps()}
+      <ZIndexProvider>{renderApps()}</ZIndexProvider>
       <img src={sauronImage} alt="sauron" />
       <Taskbar />
     </div>

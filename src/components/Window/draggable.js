@@ -20,7 +20,6 @@ export const dragElement = (mainDiv, dragDiv) => {
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
-    mainDiv.style.zIndex = 1;
     mainDiv.style.top = mainDiv.offsetTop - pos2 + 'px';
     mainDiv.style.left = mainDiv.offsetLeft - pos1 + 'px';
   };
@@ -30,9 +29,5 @@ export const dragElement = (mainDiv, dragDiv) => {
     document.onmousemove = null;
   };
 
-  if (dragDiv) {
-    dragDiv.onmousedown = dragMouseDown;
-  } else {
-    mainDiv.onmousedown = dragMouseDown;
-  }
+  dragDiv.onmousedown = dragMouseDown;
 };

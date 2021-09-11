@@ -1,0 +1,12 @@
+.image-card-wrapper {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.image-card-wrapper img {
+  width: 100px;
+  height: 100px;
+}
