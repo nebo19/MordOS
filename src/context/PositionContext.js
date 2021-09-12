@@ -1,7 +1,11 @@
 import React, { useState, createContext } from 'react';
 
+// Changing position of newly rendered Window Components
+// so they don't go over eachother
+
 let top = 10;
 let left = 10;
+let counter = 0;
 
 const initialValues = {
   fileExplorer: {
@@ -36,6 +40,9 @@ const PositionProvider = ({ children }) => {
   const [position, setPosition] = useState(initialValues);
 
   const changePosition = (appName) => {
+    top += 3;
+    left += 2;
+    counter++;
     setPosition({
       ...position,
       [appName]: {
@@ -43,21 +50,20 @@ const PositionProvider = ({ children }) => {
         left,
       },
     });
-    top += 5;
-    left += 2;
   };
 
-  const resetPosition = () => {
-    top -= 5;
-    left -= 2;
-  };
+  // Reseting top and left position so Window Components don't go out of sight
+  if (counter >= 6) {
+    top = 10;
+    left = 10;
+    counter = 0;
+  }
 
   return (
     <PositionContext.Provider
       value={{
         position,
         changePosition,
-        resetPosition,
       }}
     >
       {children}

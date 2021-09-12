@@ -34,9 +34,9 @@
   border: none;
   height: 30px;
   color: #0b152f;
-  width: 10%;
+  width: 15%;
   transition: all ease-in-out 0.3s;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom-right-radius: 0.8em;
   border-top-right-radius: 0.8em;
 }

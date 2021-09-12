@@ -60,7 +60,8 @@
 }
 
 .window-component-wrapper::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #d1422f;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadein {

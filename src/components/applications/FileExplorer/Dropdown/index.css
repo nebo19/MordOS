@@ -1,0 +1,17 @@
+.file-explorer-dropdown {
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.file-explorer-dropdown select {
+  background-color: #eaeeff;
+  padding: 4px 6px;
+  border-radius: 0.2em;
+}
+
+.file-explorer-dropdown option {
+  background-color: #eaeeff;
+  padding: 4px 6px;
+  border-radius: 0.2em;
+}

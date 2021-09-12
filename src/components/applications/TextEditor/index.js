@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-
+import React, { useState, useContext } from 'react';
 import SaveFileModal from './SaveFileModal';
+import { FileExplorerContext } from '../../../context/FileExplorerContext';
 
 import './index.css';
 
-const TextEditor = () => {
-  const [content, setContent] = useState('');
+const TextEditor = ({ editMode, fileInfo, setEdit }) => {
+  const [content, setContent] = useState(fileInfo ? fileInfo.content : '');
   const [openModal, setOpenModal] = useState(false);
+  const { overwriteFile } = useContext(FileExplorerContext);
 
   const handleSave = () => {
     setOpenModal(true);
+  };
+
+  const handleEdit = () => {
+    overwriteFile(fileInfo.title, content, fileInfo.dateCreated);
+    setEdit(false);
   };
 
   const handleClose = () => {
@@ -33,7 +39,7 @@ const TextEditor = () => {
       <button
         type="button"
         className="text-editor-save-button"
-        onClick={handleSave}
+        onClick={editMode ? handleEdit : handleSave}
       >
         Save
       </button>

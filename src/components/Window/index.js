@@ -15,19 +15,20 @@ import { dragElement } from './draggable';
 
 import './index.css';
 
-const Window = ({ appName }) => {
+const Window = ({ appName, editMode, fileInfo, setEdit }) => {
   const [maximize, setMaximize] = useState(false);
   const { closeWindow } = useContext(WindowContext);
   const { zIndex, changeZIndex } = useContext(ZIndexContext);
-  const { position, changePosition, resetPosition } =
-    useContext(PositionContext);
+  const { position, changePosition } = useContext(PositionContext);
   const elemRef = useRef([]);
 
   useEffect(() => {
-    // Calling changeZIndex only once on render to set ZIndex higher than the previous Window
-    // So it shows on top of previous component
+    // Calling changeZIndex only once on render to set ZIndex higher than the previous Window component so it shows on top of the previous one
     changeZIndex(appName);
+
+    // Calling changePosition to set top and left position a bit higher than the previous Window component so they don't overlap
     changePosition(appName);
+
     //eslint-disable-next-line
   }, []);
 
@@ -35,18 +36,6 @@ const Window = ({ appName }) => {
     dragElement(elemRef.current['wrapper'], elemRef.current['navbar']);
     elemRef.current['wrapper'].style.zIndex = zIndex[appName];
   }, [zIndex, appName]);
-
-  useEffect(() => {
-    elemRef.current['wrapper'].style.top = `${position[appName].top}%`;
-    elemRef.current['wrapper'].style.left = `${position[appName].left}%`;
-  }, [position, appName]);
-
-  useEffect(() => {
-    return () => {
-      resetPosition();
-    };
-    //eslint-disable-next-line
-  }, []);
 
   const renderApp = () => {
     switch (appName) {
@@ -59,7 +48,15 @@ const Window = ({ appName }) => {
       case 'newsFeed':
         return <NewsFeed />;
       case 'textEditor':
-        return <TextEditor />;
+        return editMode ? (
+          <TextEditor
+            editMode={editMode}
+            fileInfo={fileInfo}
+            setEdit={setEdit}
+          />
+        ) : (
+          <TextEditor />
+        );
       case 'fileExplorer':
         return <FileExplorer />;
       default:
@@ -75,10 +72,11 @@ const Window = ({ appName }) => {
       ref={(el) => (elemRef.current['wrapper'] = el)}
       onMouseDown={() => changeZIndex(appName)}
       style={{
+        position: editMode && 'fixed',
         width: maximize && '100%',
         height: maximize && '100vh',
-        top: maximize && '0%',
-        left: maximize && '0%',
+        top: maximize ? '0%' : `${position[appName].top}%`,
+        left: maximize ? '0%' : `${position[appName].left}%`,
       }}
     >
       <div
@@ -98,7 +96,7 @@ const Window = ({ appName }) => {
           <img
             src={windowExitIcon}
             alt="window-exit-icon"
-            onClick={() => closeWindow(appName)}
+            onClick={() => (editMode ? setEdit(false) : closeWindow(appName))}
           />
         </div>
       </div>

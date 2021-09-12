@@ -7,7 +7,7 @@ import cameraIcon from '../../assets/icons/camera.png';
 import newsFeedIcon from '../../assets/icons/newsFeed.png';
 import galleryIcon from '../../assets/icons/gallery.png';
 import browserIcon from '../../assets/icons/browser.png';
-import Icon from '../Icon';
+import Icon from './Icon';
 import { WindowContext } from '../../context/WindowContext';
 import { AuthContext } from '../../context/AuthContext';
 // import { AuthContext } from '../../context/AuthContext';

@@ -1,14 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import { FileExplorerContext } from '../../../../context/FileExplorerContext';
 import useDate from '../../../../hooks/useDate';
+import OverwriteFileModal from '../OverwriteFileModal';
 
 import './index.css';
 
 const SaveFileModal = ({ setOpenModal, content }) => {
-  const { dateAndTime } = useDate();
-
   const [title, setTitle] = useState('');
-  const { saveFile } = useContext(FileExplorerContext);
+  const [overwriteModalOpen, setOverwriteModalOpen] = useState(false);
+  const { dateAndTime } = useDate();
+  const { files, saveFile } = useContext(FileExplorerContext);
+  const inputElement = useRef(null);
+
+  useEffect(() => {
+    inputElement.current.focus();
+  }, []);
 
   const handleSave = () => {
     if (title.length > 30) {
@@ -16,6 +22,9 @@ const SaveFileModal = ({ setOpenModal, content }) => {
       return;
     } else if (title.length === 0) {
       alert('Please enter a title');
+      return;
+    } else if (files.some((file) => file.title === title)) {
+      setOverwriteModalOpen(true);
       return;
     }
     setTitle(title);
@@ -34,6 +43,7 @@ const SaveFileModal = ({ setOpenModal, content }) => {
         value={title}
         className="save-file-modal-input"
         placeholder="Enter a title"
+        ref={inputElement}
         onChange={(e) => setTitle(e.target.value)}
       />
       <div className="save-file-modal-buttons-wrapper">
@@ -52,6 +62,15 @@ const SaveFileModal = ({ setOpenModal, content }) => {
           Cancel
         </button>
       </div>
+      {overwriteModalOpen && (
+        <OverwriteFileModal
+          setOverwriteModalOpen={setOverwriteModalOpen}
+          setOpenModal={setOpenModal}
+          title={title}
+          content={content}
+          dateAndTime={dateAndTime}
+        />
+      )}
     </div>
   );
 };

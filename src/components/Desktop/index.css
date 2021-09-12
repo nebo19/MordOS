@@ -6,6 +6,11 @@
   align-items: center;
   flex-direction: column;
   animation: fadeInFromNone 0.5s ease-out;
+  user-select: none;
+}
+
+.desktop-wrapper img {
+  -webkit-user-drag: none;
 }
 
 @keyframes fadeInFromNone {

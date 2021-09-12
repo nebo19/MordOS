@@ -8,7 +8,7 @@ const Icon = ({ image, onClick, open, appName }) => {
     <div
       className="icon-wrapper"
       onClick={onClick}
-      style={{ backgroundColor: open && 'rgba(255, 255, 255, 0.1)' }}
+      style={{ backgroundColor: open > 0 && 'rgba(255, 255, 255, 0.1)' }}
     >
       <div className="tooltip">{upperAppName}</div>
       <img src={image} alt={`${image}`} />

@@ -3,12 +3,12 @@ import Taskbar from '../Taskbar';
 import sauronImage from '../../assets/sauron.png';
 import NavBar from '../NavBar';
 import Window from '../Window';
-
-import './index.css';
 import { WindowContext } from '../../context/WindowContext';
 import { ZIndexProvider } from '../../context/ZIndexContext';
 import { FileExplorerProvider } from '../../context/FileExplorerContext';
 import { PositionProvider } from '../../context/PositionContext';
+
+import './index.css';
 
 const Desktop = () => {
   const { open } = useContext(WindowContext);

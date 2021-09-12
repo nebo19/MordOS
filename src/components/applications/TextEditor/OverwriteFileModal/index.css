@@ -1,0 +1,66 @@
+.overwrite-file-modal-wrapper {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  background-color: #eaeeff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  border-radius: 0.5em;
+}
+
+.overwrite-file-modal-label-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.overwrite-file-modal-label {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+
+.overwrite-file-modal-buttons-wrapper {
+  margin-top: 25px;
+}
+
+.overwrite-file-modal-input {
+  width: 80%;
+  height: 30px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.5em;
+}
+
+.overwrite-file-modal-input:focus {
+  outline: none;
+}
+
+.overwrite-file-modal-save-button {
+  padding: 6px 12px;
+  margin: 0px 3px;
+  background-color: #d1422f;
+  font-size: 1em;
+  border-radius: 0.5em;
+  border: none;
+  color: #fff;
+}
+
+.overwrite-file-modal-cancel-button {
+  padding: 6px 12px;
+  margin: 0px 3px;
+  background-color: grey;
+  font-size: 1em;
+  border-radius: 0.5em;
+  border: none;
+  color: #fff;
+}

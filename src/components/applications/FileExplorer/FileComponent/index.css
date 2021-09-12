@@ -15,4 +15,34 @@
 
 .file-component-actions {
   width: 33%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.file-component-actions img {
+  width: 25px;
+  height: 25px;
+}
+
+.file-component-edit-icon-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 0.5em;
+}
+
+.file-component-delete-icon-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  margin-left: 3px;
+  border-radius: 0.5em;
+}
+
+.file-component-edit-icon-wrapper:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+.file-component-delete-icon-wrapper:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 }

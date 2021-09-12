@@ -6,6 +6,7 @@
 .file-explorer-navbar {
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding: 10px 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
