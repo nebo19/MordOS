@@ -1,8 +1,11 @@
-# MordOS
+# Welcome to the MordOS :computer:
 
 ## Live Demo
 
 https://mordos-dlabs.netlify.app/
+
+username: borgoth@mordos.com  
+password: 12bindthem
 
 ## Screenshots
 
@@ -26,10 +29,10 @@ Mobile
 
 ## How to run
 
-`git clone` clone project
-`cd MordOS` enter directory
-`npm install` or `yarn install` install dependencies
-`npm start` or `yarn start` start project locally
+`git clone` clone project  
+`cd MordOS` enter directory  
+`npm install` or `yarn install` install dependencies  
+`npm start` or `yarn start` start project locally  
 
 ## Project requirements
 
@@ -78,7 +81,7 @@ You can enrich the experience as much as you want!
 
 ## Components description
 
-App - depending on whether you are logged in, renders Desktop or Auth components
+[App](https://github.com/nebo19/MordOS/tree/main/src/App.js) - depending on whether you are logged in, renders Desktop or Auth components
 
 ### Components folder
 
@@ -122,6 +125,19 @@ Applications folder
 
 [useDate](https://github.com/nebo19/MordOS/tree/main/src/hooks/useDate.js) - hook for getting current date and time for Desktop and date created for text files
 
-## Possible updates
+## Possible updates and different approach
 
-## Project structure
+Edit text title - a useful feature to add. I had a lot of problems adding edit text and its not fully optimized but it works okay. Editing title is not possible at the moment, because i did some kind of workaround to edit text. I would add this feature maybe by creating separate function in FileExplorer called editTitle and opening a modal to edit a title.
+
+Window component - this was the toughest thing to do and optimize, there some small things to add or edit. But the more I worked on it the more things came up to work on so I had to stop at some point.
+
+Optimizing for mobile use - I mostly made this OS for larger screens, it would be good to optimize it a bit for mobiles. I did some responsiveness but there are some things to improve
+
+I wasn't sure if I could use state managment libraries so i didn't and that is a definitely something I would use for different approach. I think using Redux it would make it a bit easier to manage state.
+
+## Conclusion
+
+An awesome project to work on. Making an OS is not easy so there is a lot of space for improvement.  
+I hope you will enjoy using it. :smile:
+
+
