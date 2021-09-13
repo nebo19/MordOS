@@ -100,7 +100,7 @@ Applications folder
 
 [Desktop](https://github.com/nebo19/MordOS/tree/main/src/components/Desktop) - main screen after having logged in
 
-[Navbar](https://github.com/nebo19/MordOS/tree/main/src/components/Navbar) - shows wish message, date and time at the top of the Desktop component
+[NavBar](https://github.com/nebo19/MordOS/tree/main/src/components/NavBar) - shows wish message, date and time at the top of the Desktop component
 
 [Taskbar](https://github.com/nebo19/MordOS/tree/main/src/components/Taskbar) - renders icons at the bottom of the Desktop component which on click opens components from the applications folder
 
@@ -108,19 +108,19 @@ Applications folder
 
 ### Context folder
 
-[AuthContext](https://github.com/nebo19/MordOS/tree/main/src/context/AuthContext) - athentication context for authenticating you from login screen and keeping track of authentication through whole website
+[AuthContext](https://github.com/nebo19/MordOS/tree/main/src/context/AuthContext.js) - athentication context for authenticating you from login screen and keeping track of authentication through whole website
 
-[FileExplorerContext](https://github.com/nebo19/MordOS/tree/main/src/context/FileExplorerContext) - file explorer context for create, delete, overwrite text files and sorting them by sortBy property
+[FileExplorerContext](https://github.com/nebo19/MordOS/tree/main/src/context/FileExplorerContext.js) - file explorer context for create, delete, overwrite text files and sorting them by sortBy property
 
-[PositionContext](https://github.com/nebo19/MordOS/tree/main/src/context/PositionContext) - window position context so Window components don't render over each other
+[PositionContext](https://github.com/nebo19/MordOS/tree/main/src/context/PositionContext.js) - window position context so Window components don't render over each other
 
-[WindowContext](https://github.com/nebo19/MordOS/tree/main/src/context/WindowContext) - window context for keeping track of what application is open
+[WindowContext](https://github.com/nebo19/MordOS/tree/main/src/context/WindowContext.js) - window context for keeping track of what application is open
 
-[ZIndexContext](https://github.com/nebo19/MordOS/tree/main/src/context/ZIndexContext) - zIndex context for showing Window components in focus
+[ZIndexContext](https://github.com/nebo19/MordOS/tree/main/src/context/ZIndexContext.js) - zIndex context for showing Window components in focus
 
 ### Hooks folder
 
-[useDate](https://github.com/nebo19/MordOS/tree/main/src/hooks/useDate) - hook for getting current date and time for Desktop and date created for text files
+[useDate](https://github.com/nebo19/MordOS/tree/main/src/hooks/useDate.js) - hook for getting current date and time for Desktop and date created for text files
 
 ## Possible updates
 
