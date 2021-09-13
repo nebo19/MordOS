@@ -8,6 +8,7 @@ import './index.css';
 const SaveFileModal = ({ setOpenModal, content }) => {
   const [title, setTitle] = useState('');
   const [overwriteModalOpen, setOverwriteModalOpen] = useState(false);
+  const [error, setError] = useState(null);
   const { dateAndTime } = useDate();
   const { files, saveFile } = useContext(FileExplorerContext);
   const inputElement = useRef(null);
@@ -18,12 +19,13 @@ const SaveFileModal = ({ setOpenModal, content }) => {
 
   const handleSave = () => {
     if (title.length > 30) {
-      alert('Title is too long');
+      setError('Title is too long');
       return;
     } else if (title.length === 0) {
-      alert('Please enter a title');
+      setError('Please enter a title');
       return;
     } else if (files.some((file) => file.title === title)) {
+      setError(null);
       setOverwriteModalOpen(true);
       return;
     }
@@ -46,6 +48,7 @@ const SaveFileModal = ({ setOpenModal, content }) => {
         ref={inputElement}
         onChange={(e) => setTitle(e.target.value)}
       />
+      <div className="save-file-modal-error">{error}</div>
       <div className="save-file-modal-buttons-wrapper">
         <button
           type="button"

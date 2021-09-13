@@ -3,8 +3,8 @@ import React, { useState, createContext } from 'react';
 // Changing position of newly rendered Window Components
 // so they don't go over eachother
 
-let top = 10;
-let left = 10;
+let top = 5;
+let left = 5;
 let counter = 0;
 
 const initialValues = {
@@ -54,8 +54,8 @@ const PositionProvider = ({ children }) => {
 
   // Reseting top and left position so Window Components don't go out of sight
   if (counter >= 6) {
-    top = 10;
-    left = 10;
+    top = 5;
+    left = 5;
     counter = 0;
   }
 

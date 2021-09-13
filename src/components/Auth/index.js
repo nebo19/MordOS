@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './index.css';
 import Flame from '../../assets/animations/Flame';
 import { credentials } from '../../credentials';
@@ -7,9 +7,11 @@ import { AuthContext } from '../../context/AuthContext';
 const Auth = () => {
   const { setAuth, formValues, handleChange } = useContext(AuthContext);
   const { email, password } = formValues;
+  const [error, setError] = useState(null);
 
   const handleClick = () => {
     if (email === credentials.email && password === credentials.password) {
+      setError(null);
       setAuth(true);
       localStorage.setItem(
         'user',
@@ -20,7 +22,7 @@ const Auth = () => {
       );
     } else {
       setAuth(false);
-      alert('Invalid Credentials');
+      setError('Invalid credentials');
     }
   };
 
@@ -45,6 +47,7 @@ const Auth = () => {
           placeholder="Password"
           onChange={(e) => handleChange(e)}
         />
+        <div className="auth-error">{error}</div>
         <button type="button" onClick={handleClick}>
           Enter
         </button>

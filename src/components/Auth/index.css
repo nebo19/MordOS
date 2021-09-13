@@ -57,6 +57,12 @@
   color: #df513d;
 }
 
+.auth-error {
+  height: 10px;
+  font-size: 1rem;
+  color: #df513d;
+}
+
 @keyframes fadeInFromNone {
   0% {
     display: none;
