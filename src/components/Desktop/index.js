@@ -28,7 +28,7 @@ const Desktop = () => {
           <ZIndexProvider>{renderApps()}</ZIndexProvider>
         </PositionProvider>
       </FileExplorerProvider>
-      <img src={sauronImage} alt="sauron" />
+      <img src={sauronImage} alt="sauron" className="desktop-image" />
       <Taskbar />
     </div>
   );

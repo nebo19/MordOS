@@ -22,3 +22,9 @@
   margin-top: 5px;
   font-weight: 400;
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar-wrapper {
+    font-size: 0.8rem;
+  }
+}

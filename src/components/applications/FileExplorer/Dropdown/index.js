@@ -13,9 +13,9 @@ const Dropdown = ({ selectOption, setSelectOption }) => {
           Sort By
         </option>
         <option value="titleAsc">Title Up</option>
-        <option value="titleDes">Title Down</option>
+        <option value="titleDesc">Title Down</option>
         <option value="dateAsc">Date Up</option>
-        <option value="dateDes">Date Down</option>
+        <option value="dateDesc">Date Down</option>
       </select>
     </div>
   );

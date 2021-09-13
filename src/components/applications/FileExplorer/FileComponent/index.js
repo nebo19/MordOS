@@ -12,12 +12,12 @@ const FileComponent = ({ file }) => {
   const { closeWindow } = useContext(WindowContext);
   const [edit, setEdit] = useState(false);
 
-  let title = '';
+  let titleFormated = '';
   const reduceTitleLength = () => {
     if (file.title.length > 10) {
-      title = file.title.substring(0, 10) + '...';
+      titleFormated = file.title.substring(0, 10) + '...';
     } else {
-      title = file.title;
+      titleFormated = file.title;
     }
   };
 
@@ -31,7 +31,7 @@ const FileComponent = ({ file }) => {
   return (
     <>
       <div className="file-component-wrapper">
-        <div className="file-component-title">{title}</div>
+        <div className="file-component-title">{titleFormated}</div>
         <div className="file-component-date">{file.dateCreated}</div>
         <div className="file-component-actions">
           <div

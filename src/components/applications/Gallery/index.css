@@ -5,3 +5,8 @@
   align-items: center;
   flex-flow: row wrap;
 }
+
+.gallery-wrapper::after {
+  content: '';
+  flex: auto;
+}

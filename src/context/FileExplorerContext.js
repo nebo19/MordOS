@@ -1,5 +1,8 @@
 import React, { useState, createContext } from 'react';
 
+// Saving, deleting, overwriting files into a file explorer
+// Also sorting them based on sortBy value
+
 const FileExplorerContext = createContext([]);
 
 const FileExplorerProvider = ({ children }) => {
@@ -32,7 +35,7 @@ const FileExplorerProvider = ({ children }) => {
       case 'titleAsc':
         setFiles([...files].sort((a, b) => a.title.localeCompare(b.title)));
         break;
-      case 'titleDes':
+      case 'titleDesc':
         setFiles([...files].sort((a, b) => b.title.localeCompare(a.title)));
         break;
       case 'dateAsc':
@@ -42,7 +45,7 @@ const FileExplorerProvider = ({ children }) => {
           )
         );
         break;
-      case 'dateDes':
+      case 'dateDesc':
         setFiles(
           [...files].sort(
             (a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)

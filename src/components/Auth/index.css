@@ -50,6 +50,7 @@
 .wrapper button:hover {
   background-color: #df513d;
   color: #fff;
+  cursor: pointer;
 }
 
 .osColor {

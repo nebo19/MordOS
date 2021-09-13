@@ -22,6 +22,8 @@ const Window = ({ appName, editMode, fileInfo, setEdit }) => {
   const { position, changePosition } = useContext(PositionContext);
   const elemRef = useRef([]);
 
+  const upperAppName = appName[0].toUpperCase() + appName.slice(1);
+
   useEffect(() => {
     // Calling changeZIndex only once on render to set ZIndex higher than the previous Window component so it shows on top of the previous one
     changeZIndex(appName);
@@ -33,7 +35,10 @@ const Window = ({ appName, editMode, fileInfo, setEdit }) => {
   }, []);
 
   useEffect(() => {
+    // Making Window component draggable
     dragElement(elemRef.current['wrapper'], elemRef.current['navbar']);
+
+    // Setting zIndex so Window component go over each other when in focus
     elemRef.current['wrapper'].style.zIndex = zIndex[appName];
   }, [zIndex, appName]);
 
@@ -63,8 +68,6 @@ const Window = ({ appName, editMode, fileInfo, setEdit }) => {
         return;
     }
   };
-
-  const upperAppName = appName[0].toUpperCase() + appName.slice(1);
 
   return (
     <div

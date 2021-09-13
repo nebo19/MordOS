@@ -10,13 +10,9 @@ import browserIcon from '../../assets/icons/browser.png';
 import Icon from './Icon';
 import { WindowContext } from '../../context/WindowContext';
 import { AuthContext } from '../../context/AuthContext';
-// import { AuthContext } from '../../context/AuthContext';
 
 const icons = [
-  {
-    appName: 'logout',
-    image: logoutIcon,
-  },
+  { appName: 'logout', image: logoutIcon },
   { appName: 'fileExplorer', image: fileExplorerIcon },
   { appName: 'textEditor', image: textEditorIcon },
   { appName: 'camera', image: cameraIcon },

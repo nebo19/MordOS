@@ -53,7 +53,9 @@ const useDate = () => {
 
   const time = `${timeFormat}`;
 
-  const dateAndTime = `${dayNumber}/${monthNumber}/${yearNumber} ${time}:${
+  const dateAndTime = `${yearNumber}-${
+    monthNumber < 10 ? '0' + monthNumber : monthNumber
+  }-${dayNumber < 10 ? '0' + dayNumber : dayNumber} ${time}:${
     secondsNumber < 10 ? '0' + secondsNumber : secondsNumber
   }`;
 

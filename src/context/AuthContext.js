@@ -1,5 +1,7 @@
 import React, { useState, createContext } from 'react';
 
+// Authentication context for login and logout
+
 const AuthContext = createContext({
   email: '',
   password: '',

@@ -9,8 +9,15 @@
   user-select: none;
 }
 
-.desktop-wrapper img {
+.desktop-image {
   -webkit-user-drag: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .desktop-image {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 @keyframes fadeInFromNone {
