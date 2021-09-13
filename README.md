@@ -76,7 +76,51 @@ The OS could also have a web browser. Can be simple at first.
 Borgoth isn’t limiting us on anything here:
 You can enrich the experience as much as you want!
 
-## Component description
+## Components description
+
+App - depending on whether you are logged in, renders Desktop or Auth components
+
+### Components folder
+
+Applications folder
+  
+- [Browser](https://github.com/nebo19/MordOS/tree/main/src/components/applications/Browser) - renders a browser window with ability to search through the internet
+  
+- [Camera](https://github.com/nebo19/MordOS/tree/main/src/components/applications/Camera) - renders a camera window and opens your own camera from pc/phone
+  
+- [FileExplorer](https://github.com/nebo19/MordOS/tree/main/src/components/applications/FileExplorer) - renders file explorer window and shows all text files created
+  
+- [Gallery](https://github.com/nebo19/MordOS/tree/main/src/components/applications/Gallery) - renders gallery window with pictures fetched from external api
+  
+- [NewsFeed](https://github.com/nebo19/MordOS/tree/main/src/components/applications/NewsFeed) - renders news feed window with news fetched from external api
+  
+- [TextEditor](https://github.com/nebo19/MordOS/tree/main/src/components/applications/TextEditor) - renders text editor window to create text files
+
+[Auth](https://github.com/nebo19/MordOS/tree/main/src/components/Auth) - login screen for authentication
+
+[Desktop](https://github.com/nebo19/MordOS/tree/main/src/components/Desktop) - main screen after having logged in
+
+[Navbar](https://github.com/nebo19/MordOS/tree/main/src/components/Navbar) - shows wish message, date and time at the top of the Desktop component
+
+[Taskbar](https://github.com/nebo19/MordOS/tree/main/src/components/Taskbar) - renders icons at the bottom of the Desktop component which on click opens components from the applications folder
+
+[Window](https://github.com/nebo19/MordOS/tree/main/src/components/Window) - all components renders inside this Window components. It has drag, resize, maximize, minimize properties
+
+### Context folder
+
+[AuthContext](https://github.com/nebo19/MordOS/tree/main/src/context/AuthContext) - athentication context for authenticating you from login screen and keeping track of authentication through whole website
+
+[FileExplorerContext](https://github.com/nebo19/MordOS/tree/main/src/context/FileExplorerContext) - file explorer context for create, delete, overwrite text files and sorting them by sortBy property
+
+[PositionContext](https://github.com/nebo19/MordOS/tree/main/src/context/PositionContext) - window position context so Window components don't render over each other
+
+[WindowContext](https://github.com/nebo19/MordOS/tree/main/src/context/WindowContext) - window context for keeping track of what application is open
+
+[ZIndexContext](https://github.com/nebo19/MordOS/tree/main/src/context/ZIndexContext) - zIndex context for showing Window components in focus
+
+### Hooks folder
+
+[useDate](https://github.com/nebo19/MordOS/tree/main/src/hooks/useDate) - hook for getting current date and time for Desktop and date created for text files
 
 ## Possible updates
 
