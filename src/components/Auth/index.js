@@ -27,10 +27,10 @@ const Auth = () => {
   };
 
   return (
-    <div className="mainDiv">
-      <div className="wrapper">
+    <div className="auth-wrapper">
+      <div className="auth-form">
         <h1>
-          Mord<span className="osColor">OS</span>
+          Mord<span className="auth-os-color">OS</span>
         </h1>
         <input
           type="text"

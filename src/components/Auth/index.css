@@ -1,4 +1,4 @@
-.mainDiv {
+.auth-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,7 @@
   animation: fadeInFromNone 0.5s ease-out;
 }
 
-.wrapper {
+.auth-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,7 +16,7 @@
   width: 300px;
 }
 
-.wrapper input {
+.auth-form input {
   margin-top: 10px;
   width: 100%;
   padding: 12px 20px;
@@ -26,16 +26,16 @@
   border-radius: 0.5em;
 }
 
-.wrapper input:focus {
+.auth-form input:focus {
   outline: none;
 }
 
-.wrapper h1 {
+.auth-form h1 {
   color: #fff;
   font-size: 4.5em;
 }
 
-.wrapper button {
+.auth-form button {
   background-color: #fff;
   border: none;
   padding: 13px 28px;
@@ -47,13 +47,13 @@
   transition: all ease-in-out 0.3s;
 }
 
-.wrapper button:hover {
+.auth-form button:hover {
   background-color: #df513d;
   color: #fff;
   cursor: pointer;
 }
 
-.osColor {
+.auth-os-color {
   color: #df513d;
 }
 

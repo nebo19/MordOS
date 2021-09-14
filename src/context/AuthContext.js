@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
     email: '',
     password: '',
   });
-  const [auth, setAuth] = useState(() => localStorage.getItem('user'));
+  const [auth, setAuth] = useState(() => !!localStorage.getItem('user'));
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
